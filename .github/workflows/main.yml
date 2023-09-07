@@ -76,6 +76,6 @@ jobs:
 
              azure-vote-all-in-one-redis.yaml
 
-          images: 'mcr.microsoft.com/azuredocs/azure-vote-front:v1'
+          images: ${{ secrets.REGISTRE }}.azurecr.io/${{ secrets.REPOSITORY }}/azure-vote-front:${{ github.sha }}
 
           pull-images: false
