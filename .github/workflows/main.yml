@@ -20,19 +20,19 @@ jobs:
 
         uses: actions/checkout@v3  
 
-      # - name: ACR build
-      #   id: build-push-acr
-      #   uses: azure/acr-build@v1
-      #   with:
-      #     service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
-      #     service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWORD }}
-      #     tenant: ${{ secrets.TENANT }}
-      #     registry: ${{ secrets.REGISTRE }}
-      #     repository: ${{ secrets.REPOSITORY }}
-      #     image:  azure-vote-front
-      #     folder: azure-vote
-      #     branch: master
-      #     tag: ${{ github.sha }}
+      - name: ACR build
+        id: build-push-acr
+        uses: azure/acr-build@v1
+        with:
+          service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
+          service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWORD }}
+          tenant: ${{ secrets.TENANT }}
+          registry: ${{ secrets.REGISTRE }}
+          repository: ${{ secrets.REPOSITORY }}
+          image:  azure-vote-front
+          folder: azure-vote
+          branch: master
+          tag: ${{ github.sha }}
       
       - name: Azure login
 
@@ -76,6 +76,6 @@ jobs:
 
              azure-vote-all-in-one-redis.yaml
 
-          #images: ${{ secrets.REGISTRE }}.azurecr.io/azure-vote-front:${{ github.sha }}
+          images: YanisBACR.azurecr.io/azuredocs/azure-vote-front:${{ github.sha }}
 
           pull-images: false
