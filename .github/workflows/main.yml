@@ -40,7 +40,7 @@ jobs:
 
           resource-group: '08_YanisB' 
 
-          cluster-name: 'YanisBAKS'
+          cluster-name: 'YanisBAKSCluster'
 
       - name: Setup kubectl
 
